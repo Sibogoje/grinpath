@@ -70,7 +70,7 @@
 <body>
     <div class="header">
         <span class="menu-icon" onclick="toggleSidebar()">&#9776;</span>
-        <h2>Public Transport Incident Report</h2>
+        <h4>Public Transport Incident Report</h4>
         <img src="logo.png" alt="Transport Logo" class="logo">
     </div>
     
