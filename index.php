@@ -43,6 +43,7 @@
             padding-top: 60px;
             transition: 0.3s;
             color: white;
+            z-index: 1001;
         }
         .sidebar a {
             padding: 10px;
@@ -72,6 +73,7 @@
             right: 15px;
             font-size: 24px;
             cursor: pointer;
+            z-index: 1002;
         }
     </style>
 </head>
