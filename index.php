@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Report Transport Incident</title>
+    <link rel="png" href="bika logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
@@ -70,7 +71,7 @@
 <body>
     <div class="header">
         <span class="menu-icon" onclick="toggleSidebar()">&#9776;</span>
-        <h4>Public Transport Incident Report</h4>
+        <h6>Public Transport Incident Report</h6>
         <img src="bika logo.png" alt="Transport Logo" class="logo">
     </div>
     
