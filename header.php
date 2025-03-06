@@ -1,6 +1,6 @@
 <div class="header" onclick="event.stopPropagation()">
         <span class="menu-icon" onclick="toggleSidebar()">&#9776;</span>
-        <h6>Public Transport Incident Report</h6>
+        <h3>BIKA</h3>
         <img src="bika logo.png" alt="Transport Logo" class="logo">
     </div>
     
