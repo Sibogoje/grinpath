@@ -91,7 +91,7 @@
 </head>
 <body onclick="hideSidebar()">
    
-<?php include 'header.php';
+<?php include 'header.php'; ?>
     
     <div class="container" onclick="event.stopPropagation()">
         <p class="text-center">Help us improve transport services by reporting incidents.</p>
