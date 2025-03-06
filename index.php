@@ -47,7 +47,7 @@
         }
         .sidebar a {
             padding: 10px;
-            text-decoration: none;
+            text-decoration:  bold;
             color: white;
             display: block;
             transition: 0.3s;
