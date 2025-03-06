@@ -70,7 +70,7 @@
 </head>
 <body onclick="hideSidebar()" ontouchstart="hideSidebar()">
     <div class="header" onclick="event.stopPropagation()" ontouchstart="event.stopPropagation()">
-        <span class="menu-icon" onclick="toggleSidebar()" ontouchstart="toggleSidebar()">&#9776;</span>
+        <span class="menu-icon" onclick="toggleSidebar()" ontouchstart="toggleSidebar(event)">&#9776;</span>
         <h6>Public Transport Incident Report</h6>
         <img src="bika logo.png" alt="Transport Logo" class="logo">
     </div>
@@ -129,7 +129,8 @@
     </div>
 
     <script>
-        function toggleSidebar() {
+        function toggleSidebar(event) {
+            event.stopPropagation();
             var sidebar = document.getElementById("sidebar");
             if (sidebar.style.left === "0px") {
                 sidebar.style.left = "-250px";
