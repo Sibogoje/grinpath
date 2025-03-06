@@ -1,0 +1,79 @@
+body {
+    background-image: url('transport-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.header {
+    background:rgb(50, 3, 170);
+    color: white;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+.logo {
+    max-width: 40px;
+}
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: rgb(50, 3, 170);
+    padding-top: 60px;
+    transition: 0.3s;
+    color: white;
+    z-index: 1001;
+}
+.sidebar a {
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 18px;
+}
+.sidebar a:hover {
+    background-color: #575757;
+}
+.container {
+    max-width: 600px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.btn-custom {
+    background-color: #ff5722;
+    color: white;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1002;
+}
+.sidebar-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.sidebar-logo img {
+    max-width: 140px;
+}
