@@ -31,7 +31,7 @@
             cursor: pointer;
         }
         .logo {
-            max-width: 80px;
+            max-width: 40px;
         }
         .sidebar {
             height: 100%;
