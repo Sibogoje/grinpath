@@ -47,10 +47,12 @@
         }
         .sidebar a {
             padding: 10px;
-            text-decoration:  bold;
+            text-decoration: none;
             color: white;
             display: block;
             transition: 0.3s;
+            font-weight: bold;
+            font-size: 18px;
         }
         .sidebar a:hover {
             background-color: #575757;
