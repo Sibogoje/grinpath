@@ -52,7 +52,7 @@
             transition: 0.3s;
         }
         .sidebar a:hover {
-            background-color: #575757;
+            background-color:rgb(50, 3, 170);
         }
         .container {
             max-width: 600px;
