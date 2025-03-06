@@ -82,7 +82,7 @@
             margin-bottom: 20px;
         }
         .sidebar-logo img {
-            max-width: 80px;
+            max-width: 140px;
         }
     </style>
 </head>
