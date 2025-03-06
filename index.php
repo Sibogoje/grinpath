@@ -58,6 +58,7 @@
         .container {
             max-width: 600px;
             margin-top: 100px;
+            margin-bottom: 100px;
             background: rgba(255, 255, 255, 0.9);
             padding: 20px;
             border-radius: 10px;
