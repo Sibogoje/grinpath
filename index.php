@@ -71,7 +71,7 @@
     <div class="header">
         <span class="menu-icon" onclick="toggleSidebar()">&#9776;</span>
         <h4>Public Transport Incident Report</h4>
-        <img src="logo.png" alt="Transport Logo" class="logo">
+        <img src="bika logo.png" alt="Transport Logo" class="logo">
     </div>
     
     <div id="sidebar" class="sidebar">
