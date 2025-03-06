@@ -75,6 +75,15 @@
             cursor: pointer;
             z-index: 1002;
         }
+        .sidebar-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .sidebar-logo img {
+            max-width: 80px;
+        }
     </style>
 </head>
 <body onclick="hideSidebar()">
@@ -86,6 +95,9 @@
     
     <div id="sidebar" class="sidebar" onclick="event.stopPropagation()">
         <span class="close-btn" onclick="hideSidebar()">&#10005;</span>
+        <div class="sidebar-logo">
+            <img src="bika logo.png" alt="Transport Logo">
+        </div>
         <a href="#">Home</a>
         <a href="#">About</a>
     </div>
