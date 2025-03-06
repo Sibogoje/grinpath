@@ -15,7 +15,7 @@
             background-attachment: fixed;
         }
         .header {
-            background: #ff5722;
+            background:rgb(50, 3, 170);
             color: white;
             padding: 15px;
             position: fixed;
