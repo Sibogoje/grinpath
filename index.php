@@ -39,7 +39,7 @@
             position: fixed;
             top: 0;
             left: -250px;
-            background-color: #333;
+            background-color: rgb(50, 3, 170);
             padding-top: 60px;
             transition: 0.3s;
             color: white;
@@ -52,7 +52,7 @@
             transition: 0.3s;
         }
         .sidebar a:hover {
-            background-color:rgb(50, 3, 170);
+            background-color: #575757;
         }
         .container {
             max-width: 600px;
