@@ -101,7 +101,8 @@
         <div class="sidebar-logo">
             <img src="bika logo.png" alt="Transport Logo">
         </div>
-        <a href="#">Home</a>
+        <a href="index.php">Home</a>
+        <a href="#">Partners</a>
         <a href="#">About</a>
     </div>
     
