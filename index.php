@@ -68,19 +68,19 @@
         }
     </style>
 </head>
-<body>
-    <div class="header">
+<body onclick="hideSidebar()">
+    <div class="header" onclick="event.stopPropagation()">
         <span class="menu-icon" onclick="toggleSidebar()">&#9776;</span>
         <h6>Public Transport Incident Report</h6>
         <img src="bika logo.png" alt="Transport Logo" class="logo">
     </div>
     
-    <div id="sidebar" class="sidebar">
+    <div id="sidebar" class="sidebar" onclick="event.stopPropagation()">
         <a href="#">Home</a>
         <a href="#">About</a>
     </div>
     
-    <div class="container">
+    <div class="container" onclick="event.stopPropagation()">
         <p class="text-center">Help us improve transport services by reporting incidents.</p>
         <form action="submit_report.php" method="POST">
             <div class="mb-3">
@@ -136,6 +136,11 @@
             } else {
                 sidebar.style.left = "0px";
             }
+        }
+
+        function hideSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            sidebar.style.left = "-250px";
         }
     </script>
 </body>
