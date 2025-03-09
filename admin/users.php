@@ -18,15 +18,16 @@ session_start();
     <title>Passengers</title>
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <style>
         .dashboard {
             padding: 20px;
             margin-top: 100px;
         }
         table {
-            width: 80%;
+            width: 100%;
             border-collapse: collapse;
-            
+            margin-top: 20px;
         }
         table, th, td {
             border: 1px solid #ddd;
@@ -47,9 +48,12 @@ session_start();
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('#passengersTable').DataTable();
+            $('#passengersTable').DataTable({
+                responsive: true
+            });
         });
     </script>
 </head>
@@ -57,7 +61,7 @@ session_start();
     <?php include 'header.php'; ?>
     <div class="dashboard">
         <h1>Passengers</h1>
-        <table id="passengersTable" class="display">
+        <table id="passengersTable" class="display nowrap" style="width:100%">
             <thead>
                 <tr>
                     <th>Full Name</th>
