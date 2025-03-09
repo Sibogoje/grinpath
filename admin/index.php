@@ -50,7 +50,7 @@ session_start();
             flex-direction: column;
         }
         .dashboard-section h2 {
-            margin-top: 0;
+          
         }
         .chart-container {
             flex: 1;
