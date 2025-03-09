@@ -24,7 +24,7 @@ session_start();
             margin-top: 100px;
         }
         table {
-            width: 100%;
+            width: 80%;
             border-collapse: collapse;
             
         }
