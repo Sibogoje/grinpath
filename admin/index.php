@@ -22,13 +22,26 @@ session_start();
     <meta http-equiv="Pragma" content="no-cache">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
+        body {
+            padding-top: 60px; /* Adjust this value based on the height of your header */
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
         .dashboard {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
+            padding: 20px;
         }
         .dashboard-section {
-            flex: 1 1 calc(50% - 10px); /* Adjusted to ensure two charts per row */
+            flex: 1 1 calc(50% - 20px);
             background: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
