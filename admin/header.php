@@ -10,7 +10,7 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="users.php">Users</a></li>
+                <li><a href="users.php">Passengers</a></li>
                 <li><a href="manage_partners.php">Manage Partners</a></li>
                 <li><a href="manage_vehicles.php">Manage Vehicles</a></li>
                 <li><a href="customer_reports.php">Customer Reports</a></li>
