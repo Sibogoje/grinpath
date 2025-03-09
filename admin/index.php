@@ -59,6 +59,18 @@ session_start();
                 <canvas id="incidentReportsChart"></canvas>
             </div>
         </div>
+        <div class="dashboard-section">
+            <h2>Monthly New Users</h2>
+            <div class="chart-container">
+                <canvas id="monthlyNewUsersChart"></canvas>
+            </div>
+        </div>
+        <div class="dashboard-section">
+            <h2>Incident Types Breakdown</h2>
+            <div class="chart-container">
+                <canvas id="incidentTypesBreakdownChart"></canvas>
+            </div>
+        </div>
     </div>
     <script>
         const userStatisticsCtx = document.getElementById('userStatisticsChart').getContext('2d');
@@ -91,6 +103,46 @@ session_start();
                     label: 'Incident Reports',
                     data: [10, 5, 3],
                     backgroundColor: ['#dc3545', '#ffc107', '#28a745'],
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+
+        const monthlyNewUsersCtx = document.getElementById('monthlyNewUsersChart').getContext('2d');
+        const monthlyNewUsersChart = new Chart(monthlyNewUsersCtx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
+                datasets: [{
+                    label: 'Monthly New Users',
+                    data: [5, 10, 8, 15, 20, 25, 30, 35, 40, 45],
+                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
+                    borderColor: '#007bff',
+                    borderWidth: 1,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const incidentTypesBreakdownCtx = document.getElementById('incidentTypesBreakdownChart').getContext('2d');
+        const incidentTypesBreakdownChart = new Chart(incidentTypesBreakdownCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Bad Driving', 'Over Speeding', 'Overloading', 'Other'],
+                datasets: [{
+                    label: 'Incident Types Breakdown',
+                    data: [10, 5, 3, 2],
+                    backgroundColor: ['#dc3545', '#ffc107', '#28a745', '#6c757d'],
                 }]
             },
             options: {
