@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="login-container">
         <div class="login-logo">
-            <img src="../bika_logo.png" alt="Bika Logo">
+            <img src="../bika logo.png" alt="Bika Logo">
         </div>
         <div class="login-form">
             <h1>Admin Login</h1>
