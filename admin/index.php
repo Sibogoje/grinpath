@@ -58,7 +58,7 @@ session_start();
             height: 100%;
             width: 100%;
         }
-        @media (max-width: 768px) {
+        @media (max-width: 360px) {
             .dashboard {
                 grid-template-columns: 1fr;
             }
