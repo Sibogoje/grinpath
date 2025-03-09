@@ -53,7 +53,7 @@ session_start();
         .chart-container {
             position: relative;
             height: 300px;
-            width: 100%;
+            width: 50%;
         }
     </style>
 </head>
