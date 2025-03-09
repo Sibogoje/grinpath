@@ -39,6 +39,7 @@ session_start();
             flex-wrap: wrap;
             gap: 20px;
             padding: 20px;
+            width: 50%;
         }
         .dashboard-section {
             flex: 1 1 calc(50% - 20px);
