@@ -40,6 +40,7 @@ session_start();
             grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 20px;
+            margin-top: 150px;
         }
         .dashboard-section {
             background: #f9f9f9;
