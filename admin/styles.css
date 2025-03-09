@@ -73,6 +73,7 @@ ul li a:hover {
 
 .login-logo {
     text-align: center;
+    width: 50%;
 }
 
 .login-logo img {
@@ -82,6 +83,7 @@ ul li a:hover {
 
 .login-form {
     padding: 20px;
+    width: 50%;
 }
 
 .login-form h1 {
