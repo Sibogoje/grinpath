@@ -69,15 +69,22 @@ session_start();
             height: 100%;
             overflow: auto;
             background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
         }
         .modal-content {
             background-color: #fff;
-            margin: 15% auto;
             padding: 20px;
-            border: 1px solid #888;
+            border: none;
             width: 80%;
             max-width: 500px;
             border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .close {
             color: #aaa;
@@ -90,6 +97,31 @@ session_start();
             color: black;
             text-decoration: none;
             cursor: pointer;
+        }
+        .modal-content form {
+            display: flex;
+            flex-direction: column;
+        }
+        .modal-content form label {
+            margin-top: 10px;
+        }
+        .modal-content form input,
+        .modal-content form select,
+        .modal-content form button {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .modal-content form button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .modal-content form button:hover {
+            background: #0056b3;
         }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -107,7 +139,7 @@ session_start();
             var span = document.getElementsByClassName("close")[0];
 
             btn.onclick = function() {
-                modal.style.display = "block";
+                modal.style.display = "flex";
             }
 
             span.onclick = function() {
