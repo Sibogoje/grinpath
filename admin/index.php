@@ -23,7 +23,7 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         body {
-            padding-top: 80px; /* Adjust this value based on the height of your header */
+            padding-top: 120px; /* Adjust this value based on the height of your header */
         }
         header {
             position: fixed;
