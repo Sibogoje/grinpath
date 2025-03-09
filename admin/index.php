@@ -33,6 +33,7 @@ session_start();
             background: #fff;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 100px;
         }
         .dashboard {
             display: grid;
