@@ -1,6 +1,8 @@
 <?php
 session_start();
 if (!isset($_SESSION['loggedin'])) {
+    header('Cache-Control: no-cache, must-revalidate');
+    header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');
     header('Location: login.php');
     session_destroy();
     exit;
