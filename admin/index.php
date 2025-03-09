@@ -39,7 +39,6 @@ session_start();
             flex-wrap: wrap;
             gap: 20px;
             padding: 20px;
-            width: 50%;
         }
         .dashboard-section {
             flex: 1 1 calc(50% - 20px);
@@ -47,15 +46,17 @@ session_start();
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            width: 50%;
+            display: flex;
+            flex-direction: column;
         }
         .dashboard-section h2 {
             margin-top: 0;
         }
         .chart-container {
+            flex: 1;
             position: relative;
-            height: 300px;
-            width: 50%;
+            height: 100%;
+            width: 100%;
         }
     </style>
 </head>
@@ -107,6 +108,7 @@ session_start();
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: true
@@ -127,7 +129,8 @@ session_start();
                 }]
             },
             options: {
-                responsive: true
+                responsive: true,
+                maintainAspectRatio: false
             }
         });
 
@@ -147,6 +150,7 @@ session_start();
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: true
@@ -167,7 +171,8 @@ session_start();
                 }]
             },
             options: {
-                responsive: true
+                responsive: true,
+                maintainAspectRatio: false
             }
         });
 
@@ -187,6 +192,7 @@ session_start();
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: true
