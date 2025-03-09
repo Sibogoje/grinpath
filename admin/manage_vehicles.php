@@ -7,7 +7,7 @@ session_start();
 
 // Fetch vehicles from the database (assuming a database connection is established)
 // $db = new mysqli('host', 'user', 'password', 'database');
-// $result = $db->query("SELECT registration_number, type, trading_name FROM vehicles");
+// $result = $db->query("SELECT registration_number, type, trading_name, owner_name, owner_phone FROM vehicles");
 
 ?>
 <!DOCTYPE html>
@@ -164,6 +164,8 @@ session_start();
                     <th>Registration Number</th>
                     <th>Type</th>
                     <th>Trading Name</th>
+                    <th>Owner Name</th>
+                    <th>Owner Phone</th>
                 </tr>
             </thead>
             <tbody>
@@ -171,51 +173,71 @@ session_start();
                     <td>ESW 123 AB</td>
                     <td>Bus</td>
                     <td>Swazi Transport</td>
+                    <td>John Dlamini</td>
+                    <td>+268 76123456</td>
                 </tr>
                 <tr>
                     <td>ESW 456 CD</td>
                     <td>Kombi</td>
                     <td>Mbabane Express</td>
+                    <td>Mary Mamba</td>
+                    <td>+268 76234567</td>
                 </tr>
                 <tr>
                     <td>ESW 789 EF</td>
                     <td>Taxi</td>
                     <td>Manzini Cabs</td>
+                    <td>Sipho Nkosi</td>
+                    <td>+268 76345678</td>
                 </tr>
                 <tr>
                     <td>ESW 321 GH</td>
                     <td>Bus</td>
                     <td>Royal Transport</td>
+                    <td>Thandiwe Zwane</td>
+                    <td>+268 76456789</td>
                 </tr>
                 <tr>
                     <td>ESW 654 IJ</td>
                     <td>Kombi</td>
                     <td>Zulu Transport</td>
+                    <td>Mbali Simelane</td>
+                    <td>+268 76567890</td>
                 </tr>
                 <tr>
                     <td>ESW 987 KL</td>
                     <td>Taxi</td>
                     <td>Eswatini Taxis</td>
+                    <td>Jabulani Dube</td>
+                    <td>+268 76678901</td>
                 </tr>
                 <tr>
                     <td>ESW 111 MN</td>
                     <td>Bus</td>
                     <td>Kingdom Transport</td>
+                    <td>Nokuthula Maseko</td>
+                    <td>+268 76789012</td>
                 </tr>
                 <tr>
                     <td>ESW 222 OP</td>
                     <td>Kombi</td>
                     <td>Swazi Shuttle</td>
+                    <td>Bongani Khumalo</td>
+                    <td>+268 76890123</td>
                 </tr>
                 <tr>
                     <td>ESW 333 QR</td>
                     <td>Taxi</td>
                     <td>Mbabane Taxis</td>
+                    <td>Nomsa Dlamini</td>
+                    <td>+268 76901234</td>
                 </tr>
                 <tr>
                     <td>ESW 444 ST</td>
                     <td>Bus</td>
                     <td>Manzini Transport</td>
+                    <td>Sandile Mkhwanazi</td>
+                    <td>+268 76012345</td>
                 </tr>
             </tbody>
         </table>
@@ -238,6 +260,10 @@ session_start();
                 </select>
                 <label for="trading_name">Trading Name:</label>
                 <input type="text" id="trading_name" name="trading_name" required>
+                <label for="owner_name">Owner Name:</label>
+                <input type="text" id="owner_name" name="owner_name" required>
+                <label for="owner_phone">Owner Phone:</label>
+                <input type="text" id="owner_phone" name="owner_phone" required>
                 <button type="submit">Add Vehicle</button>
             </form>
         </div>
