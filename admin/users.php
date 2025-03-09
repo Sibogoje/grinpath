@@ -17,6 +17,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passengers</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
     <style>
         .dashboard {
             padding: 20px;
@@ -44,12 +45,19 @@ session_start();
             background: #f1f1f1;
         }
     </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#passengersTable').DataTable();
+        });
+    </script>
 </head>
 <body>
     <?php include 'header.php'; ?>
     <div class="dashboard">
         <h1>Passengers</h1>
-        <table>
+        <table id="passengersTable" class="display">
             <thead>
                 <tr>
                     <th>Full Name</th>
