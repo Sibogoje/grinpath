@@ -33,7 +33,6 @@ session_start();
             background: #fff;
             z-index: 1000;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-           
         }
         .dashboard {
             display: grid;
@@ -51,13 +50,18 @@ session_start();
             flex-direction: column;
         }
         .dashboard-section h2 {
-          
+            margin-top: 0;
         }
         .chart-container {
             flex: 1;
             position: relative;
             height: 100%;
             width: 100%;
+        }
+        @media (max-width: 768px) {
+            .dashboard {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
