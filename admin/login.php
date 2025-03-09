@@ -24,17 +24,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <div class="login-container">
-        <h1>Admin Login</h1>
-        <?php if (isset($error)): ?>
-            <p class="error"><?php echo $error; ?></p>
-        <?php endif; ?>
-        <form method="post" action="">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
-            <button type="submit">Login</button>
-        </form>
+        <div class="login-logo">
+            <img src="../bika_logo.png" alt="Bika Logo">
+        </div>
+        <div class="login-form">
+            <h1>Admin Login</h1>
+            <?php if (isset($error)): ?>
+                <p class="error"><?php echo $error; ?></p>
+            <?php endif; ?>
+            <form method="post" action="">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
