@@ -47,7 +47,6 @@ session_start();
 <body>
     <?php include 'header.php'; ?>
     <div class="dashboard">
-        <h1>Admin Dashboard</h1>
         <div class="dashboard-section">
             <h2>User Statistics</h2>
             <div class="chart-container">
