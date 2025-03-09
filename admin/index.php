@@ -28,7 +28,7 @@ session_start();
             gap: 20px;
         }
         .dashboard-section {
-            flex: 1 1 calc(50% - 20px);
+            flex: 1 1 calc(50% - 10px); /* Adjusted to ensure two charts per row */
             background: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
