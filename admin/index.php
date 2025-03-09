@@ -35,13 +35,12 @@ session_start();
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .dashboard {
-            display: flex;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 20px;
         }
         .dashboard-section {
-            flex: 1 1 calc(50% - 10px); /* Adjusted to ensure two cards per row */
             background: #f9f9f9;
             padding: 20px;
             border-radius: 8px;
