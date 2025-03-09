@@ -53,22 +53,22 @@ session_start();
     <?php include 'header.php'; ?>
     <div class="dashboard">
         <div class="card">
-            <img src="../images/eswatini_royal_police.png" alt="Eswatini Royal Police">
+            <img src="images/police.png" alt="Eswatini Royal Police">
             <h3>Eswatini Royal Police</h3>
             <p>Contact: +268 1234 5678</p>
         </div>
         <div class="card">
-            <img src="../images/emergency_rescue.png" alt="Emergency Rescue">
+            <img src="images/fire.jpg" alt="Emergency Rescue">
             <h3>Emergency Rescue</h3>
             <p>Contact: +268 2345 6789</p>
         </div>
         <div class="card">
-            <img src="../images/mtn.png" alt="MTN">
+            <img src="images/mtn.jpg" alt="MTN">
             <h3>MTN</h3>
             <p>Contact: +268 3456 7890</p>
         </div>
         <div class="card">
-            <img src="../images/manzini_municipality.png" alt="Manzini Municipality">
+            <img src="images/manzini.jpg" alt="Manzini Municipality">
             <h3>Manzini Municipality</h3>
             <p>Contact: +268 4567 8901</p>
         </div>
