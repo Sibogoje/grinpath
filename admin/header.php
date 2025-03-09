@@ -63,13 +63,16 @@
                 display: flex;
             }
         }
+        .logo img {
+            max-height: 40px;
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <a href="index.php">Logo</a>
+                <a href="index.php"><img src="../bika logo.png" alt="Bika Logo"></a>
             </div>
             <ul>
                 <li><a href="index.php">Home</a></li>
