@@ -20,6 +20,7 @@ session_start();
     <style>
         .dashboard {
             padding: 20px;
+            margin-top: 100px;
         }
         table {
             width: 100%;
