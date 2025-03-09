@@ -66,15 +66,56 @@ session_start();
                 </tr>
             </thead>
             <tbody>
-                <?php
-                // while ($row = $result->fetch_assoc()) {
-                //     echo "<tr>";
-                //     echo "<td>{$row['full_name']}</td>";
-                //     echo "<td>{$row['phone']}</td>";
-                //     echo "<td>{$row['email']}</td>";
-                //     echo "</tr>";
-                // }
-                ?>
+                <tr>
+                    <td>John Dlamini</td>
+                    <td>+268 76123456</td>
+                    <td>john.dlamini@example.com</td>
+                </tr>
+                <tr>
+                    <td>Mary Mamba</td>
+                    <td>+268 76234567</td>
+                    <td>mary.mamba@example.com</td>
+                </tr>
+                <tr>
+                    <td>Sipho Nkosi</td>
+                    <td>+268 76345678</td>
+                    <td>sipho.nkosi@example.com</td>
+                </tr>
+                <tr>
+                    <td>Thandiwe Zwane</td>
+                    <td>+268 76456789</td>
+                    <td>thandiwe.zwane@example.com</td>
+                </tr>
+                <tr>
+                    <td>Mbali Simelane</td>
+                    <td>+268 76567890</td>
+                    <td>mbali.simelane@example.com</td>
+                </tr>
+                <tr>
+                    <td>Jabulani Dube</td>
+                    <td>+268 76678901</td>
+                    <td>jabulani.dube@example.com</td>
+                </tr>
+                <tr>
+                    <td>Nokuthula Maseko</td>
+                    <td>+268 76789012</td>
+                    <td>nokuthula.maseko@example.com</td>
+                </tr>
+                <tr>
+                    <td>Bongani Khumalo</td>
+                    <td>+268 76890123</td>
+                    <td>bongani.khumalo@example.com</td>
+                </tr>
+                <tr>
+                    <td>Nomsa Dlamini</td>
+                    <td>+268 76901234</td>
+                    <td>nomsa.dlamini@example.com</td>
+                </tr>
+                <tr>
+                    <td>Sandile Mkhwanazi</td>
+                    <td>+268 76012345</td>
+                    <td>sandile.mkhwanazi@example.com</td>
+                </tr>
             </tbody>
         </table>
     </div>
