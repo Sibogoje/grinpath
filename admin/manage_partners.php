@@ -63,7 +63,7 @@ session_start();
             <p>Contact: +268 2345 6789</p>
         </div>
         <div class="card">
-            <img src="images/mtn.png" alt="MTN">
+            <img src="images/mtn.jpg" alt="MTN">
             <h3>MTN</h3>
             <p>Contact: +268 3456 7890</p>
         </div>
