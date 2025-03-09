@@ -20,6 +20,7 @@ session_start();
     <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
     <meta http-equiv="Cache-Control" content="post-check=0, pre-check=0">
     <meta http-equiv="Pragma" content="no-cache">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         .dashboard {
             display: flex;
@@ -36,28 +37,10 @@ session_start();
         .dashboard-section h2 {
             margin-top: 0;
         }
-        .dashboard-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .dashboard-section ul li {
-            background: #fff;
-            padding: 10px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-        .dashboard-section a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: #007bff;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 4px;
-        }
-        .dashboard-section a:hover {
-            background: #0056b3;
+        .chart-container {
+            position: relative;
+            height: 300px;
+            width: 100%;
         }
     </style>
 </head>
@@ -67,28 +50,54 @@ session_start();
         <h1>Admin Dashboard</h1>
         <div class="dashboard-section">
             <h2>User Statistics</h2>
-            <p>Total Users: 150</p>
-            <p>Active Users: 120</p>
-            <p>New Users This Month: 30</p>
-        </div>
-        <div class="dashboard-section">
-            <h2>Recent Activities</h2>
-            <ul>
-                <li>User JohnDoe logged in</li>
-                <li>User JaneSmith updated profile</li>
-                <li>New user MikeRoss registered</li>
-            </ul>
-        </div>
-        <div class="dashboard-section">
-            <h2>System Status</h2>
-            <p>Server Uptime: 99.99%</p>
-            <p>Database Status: Connected</p>
-            <p>Last Backup: 2023-10-01</p>
+            <div class="chart-container">
+                <canvas id="userStatisticsChart"></canvas>
+            </div>
         </div>
         <div class="dashboard-section">
             <h2>Incident Reports</h2>
-            <a href="view_incidents.php">View Reported Incidents</a>
+            <div class="chart-container">
+                <canvas id="incidentReportsChart"></canvas>
+            </div>
         </div>
     </div>
+    <script>
+        const userStatisticsCtx = document.getElementById('userStatisticsChart').getContext('2d');
+        const userStatisticsChart = new Chart(userStatisticsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Total Users', 'Active Users', 'New Users This Month'],
+                datasets: [{
+                    label: 'User Statistics',
+                    data: [150, 120, 30],
+                    backgroundColor: ['#007bff', '#28a745', '#ffc107'],
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const incidentReportsCtx = document.getElementById('incidentReportsChart').getContext('2d');
+        const incidentReportsChart = new Chart(incidentReportsCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Bad Driving', 'Over Speeding', 'Overloading'],
+                datasets: [{
+                    label: 'Incident Reports',
+                    data: [10, 5, 3],
+                    backgroundColor: ['#dc3545', '#ffc107', '#28a745'],
+                }]
+            },
+            options: {
+                responsive: true
+            }
+        });
+    </script>
 </body>
 </html>
