@@ -71,6 +71,12 @@ session_start();
                 <canvas id="incidentTypesBreakdownChart"></canvas>
             </div>
         </div>
+        <div class="dashboard-section">
+            <h2>Incident Trends</h2>
+            <div class="chart-container">
+                <canvas id="incidentTrendsChart"></canvas>
+            </div>
+        </div>
     </div>
     <script>
         const userStatisticsCtx = document.getElementById('userStatisticsChart').getContext('2d');
@@ -147,6 +153,30 @@ session_start();
             },
             options: {
                 responsive: true
+            }
+        });
+
+        const incidentTrendsCtx = document.getElementById('incidentTrendsChart').getContext('2d');
+        const incidentTrendsChart = new Chart(incidentTrendsCtx, {
+            type: 'line',
+            data: {
+                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
+                datasets: [{
+                    label: 'Incident Trends',
+                    data: [2, 3, 5, 7, 6, 8, 10, 9, 11, 12],
+                    backgroundColor: 'rgba(220, 53, 69, 0.2)',
+                    borderColor: '#dc3545',
+                    borderWidth: 1,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
             }
         });
     </script>
