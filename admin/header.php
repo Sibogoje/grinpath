@@ -10,7 +10,6 @@
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
-                <li><a href="dashboard.php">Dashboard</a></li>
                 <li><a href="users.php">Users</a></li>
                 <li><a href="manage_partners.php">Manage Partners</a></li>
                 <li><a href="manage_vehicles.php">Manage Vehicles</a></li>
