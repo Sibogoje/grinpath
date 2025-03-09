@@ -7,7 +7,6 @@
 </head>
 <body>
     <header>
-        <h1>Admin Panel</h1>
         <nav>
             <ul>
                 <li><a href="index.php">Home</a></li>
