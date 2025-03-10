@@ -7,7 +7,7 @@ session_start();
 
 // Fetch incidents from the database (assuming a database connection is established)
 // $db = new mysqli('host', 'user', 'password', 'database');
-// $result = $db->query("SELECT vehicle_registration, trading_name, reporter, route, time_of_report, day_of_report FROM incidents");
+// $result = $db->query("SELECT vehicle_registration, trading_name, reporter, route, time_of_report, day_of_report, verified FROM incidents");
 
 ?>
 <!DOCTYPE html>
@@ -45,6 +45,24 @@ session_start();
         tbody tr:hover {
             background: #f1f1f1;
         }
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .action-buttons button {
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .action-buttons .edit {
+            background: #ffc107;
+            color: #fff;
+        }
+        .action-buttons .delete {
+            background: #dc3545;
+            color: #fff;
+        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -70,6 +88,8 @@ session_start();
                     <th>Route</th>
                     <th>Time of Report</th>
                     <th>Day of Report</th>
+                    <th>Verified</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -80,6 +100,13 @@ session_start();
                     <td>Manzini - Mbabane</td>
                     <td>10:30 AM</td>
                     <td>Monday</td>
+                    <td>Yes</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 456 CD</td>
@@ -88,6 +115,13 @@ session_start();
                     <td>Manzini - Matsapha</td>
                     <td>2:00 PM</td>
                     <td>Tuesday</td>
+                    <td>No</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 789 EF</td>
@@ -96,6 +130,13 @@ session_start();
                     <td>Manzini - Ezulwini</td>
                     <td>8:45 AM</td>
                     <td>Wednesday</td>
+                    <td>Yes</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 321 GH</td>
@@ -104,6 +145,13 @@ session_start();
                     <td>Manzini - Mbabane</td>
                     <td>11:15 AM</td>
                     <td>Thursday</td>
+                    <td>No</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 654 IJ</td>
@@ -112,6 +160,13 @@ session_start();
                     <td>Manzini - Matsapha</td>
                     <td>3:30 PM</td>
                     <td>Friday</td>
+                    <td>Yes</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 987 KL</td>
@@ -120,6 +175,13 @@ session_start();
                     <td>Manzini - Ezulwini</td>
                     <td>9:00 AM</td>
                     <td>Saturday</td>
+                    <td>No</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 111 MN</td>
@@ -128,6 +190,13 @@ session_start();
                     <td>Manzini - Mbabane</td>
                     <td>12:45 PM</td>
                     <td>Sunday</td>
+                    <td>Yes</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 222 OP</td>
@@ -136,6 +205,13 @@ session_start();
                     <td>Manzini - Matsapha</td>
                     <td>4:00 PM</td>
                     <td>Monday</td>
+                    <td>No</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 333 QR</td>
@@ -144,6 +220,13 @@ session_start();
                     <td>Manzini - Ezulwini</td>
                     <td>7:30 AM</td>
                     <td>Tuesday</td>
+                    <td>Yes</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
                 <tr>
                     <td>ESW 444 ST</td>
@@ -152,6 +235,13 @@ session_start();
                     <td>Manzini - Mbabane</td>
                     <td>1:00 PM</td>
                     <td>Wednesday</td>
+                    <td>No</td>
+                    <td>
+                        <div class="action-buttons">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>
