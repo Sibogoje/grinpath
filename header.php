@@ -41,13 +41,13 @@
     .sidebar {
         position: fixed;
         top: 0;
-        left: -300px;
+        left: -300px; /* Ensure the sidebar is fully hidden */
         width: 300px;
         height: 100%;
         background: linear-gradient(135deg, #007bff, #0056b3);
         color: #fff;
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-        transition: left 0.3s ease;
+        transition: left 0.3s ease; /* Smooth transition for opening/closing */
         z-index: 1000;
         display: flex;
         flex-direction: column;
@@ -55,7 +55,7 @@
     }
 
     .sidebar.show {
-        left: 0;
+        left: 0; /* Fully visible when toggled */
     }
 
     .close-btn {
@@ -130,5 +130,6 @@
     function hideSidebar() {
         const sidebar = document.getElementById("sidebar");
         sidebar.classList.remove("show");
+        sidebar.style.left = "-300px"; // Ensure the sidebar is fully hidden
     }
 </script>
