@@ -50,11 +50,11 @@
         margin: 0 10px;
     }
     .institution-logos img {
-        max-width: 100px;
+        max-width: 80px; /* Reduced image size */
         margin-bottom: 10px;
     }
     .institution-logos p {
-        font-size: 14px;
+        font-size: 12px; /* Slightly smaller text */
         color: #333;
     }
 </style>
