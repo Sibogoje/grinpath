@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <img src="../bika logo.png" alt="Bika Logo">
         </div>
         <div class="login-form">
-            <h1>Admin Login</h1>
+            <h1>Super Admin Login</h1>
             <?php if (isset($error)): ?>
                 <p class="error"><?php echo $error; ?></p>
             <?php endif; ?>
