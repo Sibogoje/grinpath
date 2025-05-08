@@ -1,6 +1,7 @@
 <?php
+header('Content-Type: application/json');
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Collect form data
     $incident_type = $_POST['incident_type'];
     $vehicle_info = $_POST['vehicle_info'];
     $location = $_POST['location'];
@@ -10,23 +11,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $phone_number = $_POST['phone_number'];
     $details = $_POST['details'] ?? null;
 
-    // Database connection
-    $db = new mysqli('195.35.53.20', 'u747325399_bila', 'pKXLu5g9uB3]', 'u747325399_bika');
+    $db = new mysqli('localhost', 'root', '', 'bika');
     if ($db->connect_error) {
-        die("Connection failed: " . $db->connect_error);
+        echo json_encode(['success' => false, 'message' => 'Database connection failed.']);
+        exit;
     }
 
-    // Insert data into the database
     $stmt = $db->prepare("INSERT INTO incidents (incident_type, vehicle_info, location, boarding_location, dropoff_location, reporter_name, phone_number, details) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param('ssssssss', $incident_type, $vehicle_info, $location, $boarding_location, $dropoff_location, $reporter_name, $phone_number, $details);
 
     if ($stmt->execute()) {
-        echo "Incident reported successfully.";
+        echo json_encode(['success' => true, 'message' => 'Incident reported successfully.']);
     } else {
-        echo "Error: " . $stmt->error;
+        echo json_encode(['success' => false, 'message' => 'Failed to report the incident.']);
     }
 
     $stmt->close();
     $db->close();
+} else {
+    echo json_encode(['success' => false, 'message' => 'Invalid request method.']);
 }
 ?>

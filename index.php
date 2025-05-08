@@ -38,7 +38,8 @@
     <div class="container form-container" onclick="event.stopPropagation()">
         <h1>Report an Incident</h1>
         <p class="text-center">Help us improve transport services by reporting incidents.</p>
-        <form action="insert_incident.php" method="POST">
+        <div id="responseMessage" class="alert d-none"></div>
+        <form id="incidentForm">
             <div class="row">
                 <div class="col-md-6">
                     <label class="form-label">Incident Type</label>
@@ -105,6 +106,35 @@
             var sidebar = document.getElementById("sidebar");
             sidebar.style.left = "-250px";
         }
+
+        document.getElementById('incidentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            const responseMessage = document.getElementById('responseMessage');
+
+            fetch('insert_incident.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    responseMessage.className = 'alert alert-success';
+                    responseMessage.textContent = data.message;
+                    responseMessage.classList.remove('d-none');
+                    this.reset();
+                } else {
+                    responseMessage.className = 'alert alert-danger';
+                    responseMessage.textContent = data.message;
+                    responseMessage.classList.remove('d-none');
+                }
+            })
+            .catch(error => {
+                responseMessage.className = 'alert alert-danger';
+                responseMessage.textContent = 'An error occurred. Please try again.';
+                responseMessage.classList.remove('d-none');
+            });
+        });
     </script>
 </body>
 </html>
