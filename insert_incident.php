@@ -13,7 +13,7 @@ try {
         $details = $_POST['details'] ?? null;
 
         // Database connection
-        $db = new mysqli('localhost', 'root', '', 'bika');
+        $db = new mysqli('195.35.53.20', 'u747325399_bila', 'pKXLu5g9uB3]', 'u747325399_bika');
         if ($db->connect_error) {
             throw new Exception('Database connection failed: ' . $db->connect_error);
         }
