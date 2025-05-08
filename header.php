@@ -130,6 +130,8 @@
     function hideSidebar() {
         const sidebar = document.getElementById("sidebar");
         sidebar.classList.remove("show");
-        sidebar.style.left = "-300px"; // Ensure the sidebar is fully hidden
+        setTimeout(() => {
+            sidebar.style.left = "-300px"; // Ensure the sidebar is fully hidden after the transition
+        }, 300); // Match the transition duration
     }
 </script>
