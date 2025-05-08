@@ -28,7 +28,7 @@
                 <p>Royal Eswatini Police Service</p>
             </div>
             <div class="col">
-                <img src="admin/images/fire.png" alt="Fire Department">
+                <img src="admin/images/fire1.png" alt="Fire Department">
                 <p>Fire Department (977)</p>
             </div>
         </div>
