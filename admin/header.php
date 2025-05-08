@@ -41,6 +41,18 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
             text-decoration: none;
             color: #333;
         }
+        .logout-btn {
+            background: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .logout-btn:hover {
+            background: #c82333;
+        }
         .hamburger {
             display: none;
             flex-direction: column;
@@ -88,6 +100,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
                 <li><a href="manage_vehicles.php">Manage Vehicles</a></li>
                 <li><a href="customer_reports.php">Customer Reports</a></li>
             </ul>
+            <button class="logout-btn" onclick="window.location.href='../logout.php'">Logout</button>
             <div class="hamburger" onclick="toggleMenu()">
                 <div></div>
                 <div></div>
