@@ -11,10 +11,10 @@
     <style>
         .form-container {
             max-width: 1100px;
-            margin: 10px auto;
+            margin: 50px auto;
             padding: 35px;
             background: #f9f9f9;
-            border-radius: 8px;
+            border-radius: 0px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             min-height: calc(100vh - 100px); /* Full height minus header height */
             display: flex;
