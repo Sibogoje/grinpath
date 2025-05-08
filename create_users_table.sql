@@ -6,6 +6,6 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Insert an admin user (password: admin123)
+-- Insert an admin user with encrypted password (12345)
 INSERT INTO users (username, password, role) 
 VALUES ('admin', '$2y$10$eImiTXuWVxfM37uY4JANjQe5xv6p3X9zYq5J9z1J9z1J9z1J9z1J9', 'admin');
