@@ -16,6 +16,10 @@
             background: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            min-height: calc(100vh - 100px); /* Full height minus header height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         .form-container h1 {
             text-align: center;
