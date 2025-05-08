@@ -41,7 +41,7 @@
         <div id="responseMessage" class="alert d-none"></div>
         <form id="incidentForm">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Incident Type</label>
                     <select class="form-control" name="incident_type" required>
                         <option value="">Select an Incident</option>
@@ -54,42 +54,42 @@
                         <option value="other">Other</option>
                     </select>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Vehicle Registration/Name</label>
                     <input type="text" class="form-control" name="vehicle_info" required>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Your Location</label>
                     <input type="text" class="form-control" name="location" required>
                 </div>
-                <div class="col-md-6">
+            </div>
+            <div class="row">
+                <div class="col-md-4">
                     <label class="form-label">Boarding Location</label>
                     <input type="text" class="form-control" name="boarding_location" required>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Intended Drop-off Location</label>
                     <input type="text" class="form-control" name="dropoff_location" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Your Name (Optional)</label>
                     <input type="text" class="form-control" name="reporter_name">
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Your Phone Number</label>
                     <input type="tel" class="form-control" name="phone_number" required>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-4">
                     <label class="form-label">Additional Details</label>
-                    <textarea class="form-control" name="details" rows="3"></textarea>
+                    <textarea class="form-control" name="details" rows="1"></textarea>
+                </div>
+                <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-custom w-100">Submit Report</button>
                 </div>
             </div>
-            <button type="submit" class="btn btn-custom w-100">Submit Report</button>
         </form>
     </div>
     <script>
@@ -122,17 +122,30 @@
                     responseMessage.className = 'alert alert-success';
                     responseMessage.textContent = data.message;
                     responseMessage.classList.remove('d-none');
-                    this.reset();
                 } else {
                     responseMessage.className = 'alert alert-danger';
                     responseMessage.textContent = data.message;
                     responseMessage.classList.remove('d-none');
+                }
+
+                // Make the note disappear after 5 seconds
+                setTimeout(() => {
+                    responseMessage.classList.add('d-none');
+                }, 5000);
+
+                if (data.success) {
+                    this.reset();
                 }
             })
             .catch(error => {
                 responseMessage.className = 'alert alert-danger';
                 responseMessage.textContent = 'An error occurred. Please try again.';
                 responseMessage.classList.remove('d-none');
+
+                // Make the note disappear after 5 seconds
+                setTimeout(() => {
+                    responseMessage.classList.add('d-none');
+                }, 5000);
             });
         });
     </script>
