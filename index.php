@@ -8,59 +8,89 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .form-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .form-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-container .row > div {
+            margin-bottom: 15px;
+        }
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body onclick="hideSidebar()">
-   
-<?php include 'header.php'; ?>
-    
-    <div class="container" onclick="event.stopPropagation()">
+    <?php include 'header.php'; ?>
+    <div class="container form-container" onclick="event.stopPropagation()">
+        <h1>Report an Incident</h1>
         <p class="text-center">Help us improve transport services by reporting incidents.</p>
         <form action="submit_report.php" method="POST">
-            <div class="mb-3">
-                <label class="form-label">Incident Type</label>
-                <select class="form-control" name="incident_type" required>
-                    <option value="">Select an Incident</option>
-                    <option value="bad_driving">Bad Driving</option>
-                    <option value="over_speeding">Over Speeding</option>
-                    <option value="overloading">Overloading</option>
-                    <option value="dirty_vehicle">Dirty Vehicle</option>
-                    <option value="rude_operator">Rude Operator</option>
-                    <option value="threats">Threats</option>
-                    <option value="other">Other</option>
-                </select>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Incident Type</label>
+                    <select class="form-control" name="incident_type" required>
+                        <option value="">Select an Incident</option>
+                        <option value="bad_driving">Bad Driving</option>
+                        <option value="over_speeding">Over Speeding</option>
+                        <option value="overloading">Overloading</option>
+                        <option value="dirty_vehicle">Dirty Vehicle</option>
+                        <option value="rude_operator">Rude Operator</option>
+                        <option value="threats">Threats</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Vehicle Registration/Name</label>
+                    <input type="text" class="form-control" name="vehicle_info" required>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Vehicle Registration/Name</label>
-                <input type="text" class="form-control" name="vehicle_info" required>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Your Location</label>
+                    <input type="text" class="form-control" name="location" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Boarding Location</label>
+                    <input type="text" class="form-control" name="boarding_location" required>
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Your Location</label>
-                <input type="text" class="form-control" name="location" required>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Intended Drop-off Location</label>
+                    <input type="text" class="form-control" name="dropoff_location" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Your Name (Optional)</label>
+                    <input type="text" class="form-control" name="reporter_name">
+                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label">Boarding Location</label>
-                <input type="text" class="form-control" name="boarding_location" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Intended Drop-off Location</label>
-                <input type="text" class="form-control" name="dropoff_location" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Your Name (Optional)</label>
-                <input type="text" class="form-control" name="reporter_name">
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Your Phone Number</label>
-                <input type="tel" class="form-control" name="phone_number" required>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Additional Details</label>
-                <textarea class="form-control" name="details" rows="3"></textarea>
+            <div class="row">
+                <div class="col-md-6">
+                    <label class="form-label">Your Phone Number</label>
+                    <input type="tel" class="form-control" name="phone_number" required>
+                </div>
+                <div class="col-md-6">
+                    <label class="form-label">Additional Details</label>
+                    <textarea class="form-control" name="details" rows="3"></textarea>
+                </div>
             </div>
             <button type="submit" class="btn btn-custom w-100">Submit Report</button>
         </form>
     </div>
-
     <script>
         function toggleSidebar() {
             var sidebar = document.getElementById("sidebar");
