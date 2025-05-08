@@ -1,14 +1,19 @@
 <?php
 session_start();
-// if (!isset($_SESSION['loggedin'])) {
-//     header('Location: login.php');
-//     exit;
-// }
+if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
+    header('Location: ../login.php');
+    exit;
+}
 
-// Fetch incidents from the database (assuming a database connection is established)
-// $db = new mysqli('host', 'user', 'password', 'database');
-// $result = $db->query("SELECT vehicle_registration, trading_name, reporter, route, time_of_report, day_of_report, verified FROM incidents");
+// Database connection
+$db = new mysqli('195.35.53.20', 'u747325399_bila', 'pKXLu5g9uB3]', 'u747325399_bika');
+if ($db->connect_error) {
+    die('Database connection failed: ' . $db->connect_error);
+}
 
+// Fetch incidents from the database
+$query = "SELECT id, incident_type, vehicle_info, location, boarding_location, dropoff_location, reporter_name, phone_number, details, reported_at FROM incidents ORDER BY reported_at DESC";
+$result = $db->query($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,24 +50,6 @@ session_start();
         tbody tr:hover {
             background: #f1f1f1;
         }
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-        }
-        .action-buttons button {
-            padding: 5px 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .action-buttons .edit {
-            background: #ffc107;
-            color: #fff;
-        }
-        .action-buttons .delete {
-            background: #dc3545;
-            color: #fff;
-        }
     </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
@@ -82,167 +69,33 @@ session_start();
         <table id="reportsTable" class="display nowrap" style="width:100%">
             <thead>
                 <tr>
-                    <th>Vehicle Registration</th>
-                    <th>Trading Name</th>
-                    <th>Reporter</th>
-                    <th>Route</th>
-                    <th>Time of Report</th>
-                    <th>Day of Report</th>
-                    <th>Verified</th>
-                    <th>Action</th>
+                    <th>ID</th>
+                    <th>Incident Type</th>
+                    <th>Vehicle Info</th>
+                    <th>Location</th>
+                    <th>Boarding Location</th>
+                    <th>Drop-off Location</th>
+                    <th>Reporter Name</th>
+                    <th>Phone Number</th>
+                    <th>Details</th>
+                    <th>Reported At</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>ESW 123 AB</td>
-                    <td>Swazi Transport</td>
-                    <td>John Dlamini</td>
-                    <td>Manzini - Mbabane</td>
-                    <td>10:30 AM</td>
-                    <td>Monday</td>
-                    <td>Yes</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 456 CD</td>
-                    <td>Mbabane Express</td>
-                    <td>Mary Mamba</td>
-                    <td>Manzini - Matsapha</td>
-                    <td>2:00 PM</td>
-                    <td>Tuesday</td>
-                    <td>No</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 789 EF</td>
-                    <td>Manzini Cabs</td>
-                    <td>Sipho Nkosi</td>
-                    <td>Manzini - Ezulwini</td>
-                    <td>8:45 AM</td>
-                    <td>Wednesday</td>
-                    <td>Yes</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 321 GH</td>
-                    <td>Royal Transport</td>
-                    <td>Thandiwe Zwane</td>
-                    <td>Manzini - Mbabane</td>
-                    <td>11:15 AM</td>
-                    <td>Thursday</td>
-                    <td>No</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 654 IJ</td>
-                    <td>Zulu Transport</td>
-                    <td>Mbali Simelane</td>
-                    <td>Manzini - Matsapha</td>
-                    <td>3:30 PM</td>
-                    <td>Friday</td>
-                    <td>Yes</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 987 KL</td>
-                    <td>Eswatini Taxis</td>
-                    <td>Jabulani Dube</td>
-                    <td>Manzini - Ezulwini</td>
-                    <td>9:00 AM</td>
-                    <td>Saturday</td>
-                    <td>No</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 111 MN</td>
-                    <td>Kingdom Transport</td>
-                    <td>Nokuthula Maseko</td>
-                    <td>Manzini - Mbabane</td>
-                    <td>12:45 PM</td>
-                    <td>Sunday</td>
-                    <td>Yes</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 222 OP</td>
-                    <td>Swazi Shuttle</td>
-                    <td>Bongani Khumalo</td>
-                    <td>Manzini - Matsapha</td>
-                    <td>4:00 PM</td>
-                    <td>Monday</td>
-                    <td>No</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 333 QR</td>
-                    <td>Mbabane Taxis</td>
-                    <td>Nomsa Dlamini</td>
-                    <td>Manzini - Ezulwini</td>
-                    <td>7:30 AM</td>
-                    <td>Tuesday</td>
-                    <td>Yes</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ESW 444 ST</td>
-                    <td>Manzini Transport</td>
-                    <td>Sandile Mkhwanazi</td>
-                    <td>Manzini - Mbabane</td>
-                    <td>1:00 PM</td>
-                    <td>Wednesday</td>
-                    <td>No</td>
-                    <td>
-                        <div class="action-buttons">
-                            <button class="edit">Edit</button>
-                            <button class="delete">Delete</button>
-                        </div>
-                    </td>
-                </tr>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['id']); ?></td>
+                        <td><?php echo htmlspecialchars($row['incident_type']); ?></td>
+                        <td><?php echo htmlspecialchars($row['vehicle_info']); ?></td>
+                        <td><?php echo htmlspecialchars($row['location']); ?></td>
+                        <td><?php echo htmlspecialchars($row['boarding_location']); ?></td>
+                        <td><?php echo htmlspecialchars($row['dropoff_location']); ?></td>
+                        <td><?php echo htmlspecialchars($row['reporter_name'] ?? 'N/A'); ?></td>
+                        <td><?php echo htmlspecialchars($row['phone_number']); ?></td>
+                        <td><?php echo htmlspecialchars($row['details'] ?? 'N/A'); ?></td>
+                        <td><?php echo htmlspecialchars($row['reported_at']); ?></td>
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
     </div>
