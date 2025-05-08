@@ -38,7 +38,7 @@
     <div class="container form-container" onclick="event.stopPropagation()">
         <h1>Report an Incident</h1>
         <p class="text-center">Help us improve transport services by reporting incidents.</p>
-        <form action="submit_report.php" method="POST">
+        <form action="insert_incident.php" method="POST">
             <div class="row">
                 <div class="col-md-6">
                     <label class="form-label">Incident Type</label>
