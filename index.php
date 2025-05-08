@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="style.css">
     <style>
         .form-container {
-            max-width: 800px;
+            max-width: 1100px;
             margin: 50px auto;
-            padding: 20px;
+            padding: 35px;
             background: #f9f9f9;
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -82,11 +82,13 @@
                     <label class="form-label">Your Phone Number</label>
                     <input type="tel" class="form-control" name="phone_number" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-8">
                     <label class="form-label">Additional Details</label>
                     <textarea class="form-control" name="details" rows="1"></textarea>
                 </div>
-                <div class="col-md-4 d-flex align-items-end">
+            </div>
+            <div class="row">
+                <div class="col-12">
                     <button type="submit" class="btn btn-custom w-100">Submit Report</button>
                 </div>
             </div>
