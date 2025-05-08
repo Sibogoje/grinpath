@@ -28,6 +28,9 @@
         .form-container .row > div {
             margin-bottom: 15px;
         }
+        .form-label {
+            font-weight: bold;
+        }
         .btn-custom {
             background-color: #007bff;
             color: #fff;
