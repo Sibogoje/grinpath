@@ -104,6 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         @media (max-width: 768px) {
             .login-container {
                 padding: 20px;
+                margin: 30px;
             }
         }
     </style>
