@@ -1,14 +1,19 @@
 <?php
 session_start();
-// if (!isset($_SESSION['loggedin'])) {
-//     header('Location: login.php');
-//     exit;
-// }
+if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
+    header('Location: ../login.php');
+    exit;
+}
 
-// Fetch users from the database (assuming a database connection is established)
-// $db = new mysqli('host', 'user', 'password', 'database');
-// $result = $db->query("SELECT full_name, phone, email FROM users");
+// Database connection
+$db = new mysqli('195.35.53.20', 'u747325399_bila', 'pKXLu5g9uB3]', 'u747325399_bika');
+if ($db->connect_error) {
+    die('Database connection failed: ' . $db->connect_error);
+}
 
+// Fetch unique passengers by phone number
+$query = "SELECT DISTINCT phone_number, reporter_name, boarding_location, dropoff_location FROM incidents";
+$result = $db->query($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -64,62 +69,21 @@ session_start();
         <table id="passengersTable" class="display nowrap" style="width:100%">
             <thead>
                 <tr>
-                    <th>Full Name</th>
-                    <th>Phone</th>
-                    <th>Email</th>
+                    <th>Phone Number</th>
+                    <th>Name</th>
+                    <th>Boarding Location</th>
+                    <th>Drop-off Location</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>John Dlamini</td>
-                    <td>+268 76123456</td>
-                    <td>john.dlamini@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mary Mamba</td>
-                    <td>+268 76234567</td>
-                    <td>mary.mamba@example.com</td>
-                </tr>
-                <tr>
-                    <td>Sipho Nkosi</td>
-                    <td>+268 76345678</td>
-                    <td>sipho.nkosi@example.com</td>
-                </tr>
-                <tr>
-                    <td>Thandiwe Zwane</td>
-                    <td>+268 76456789</td>
-                    <td>thandiwe.zwane@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mbali Simelane</td>
-                    <td>+268 76567890</td>
-                    <td>mbali.simelane@example.com</td>
-                </tr>
-                <tr>
-                    <td>Jabulani Dube</td>
-                    <td>+268 76678901</td>
-                    <td>jabulani.dube@example.com</td>
-                </tr>
-                <tr>
-                    <td>Nokuthula Maseko</td>
-                    <td>+268 76789012</td>
-                    <td>nokuthula.maseko@example.com</td>
-                </tr>
-                <tr>
-                    <td>Bongani Khumalo</td>
-                    <td>+268 76890123</td>
-                    <td>bongani.khumalo@example.com</td>
-                </tr>
-                <tr>
-                    <td>Nomsa Dlamini</td>
-                    <td>+268 76901234</td>
-                    <td>nomsa.dlamini@example.com</td>
-                </tr>
-                <tr>
-                    <td>Sandile Mkhwanazi</td>
-                    <td>+268 76012345</td>
-                    <td>sandile.mkhwanazi@example.com</td>
-                </tr>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?php echo htmlspecialchars($row['phone_number']); ?></td>
+                        <td><?php echo htmlspecialchars($row['reporter_name'] ?? 'N/A'); ?></td>
+                        <td><?php echo htmlspecialchars($row['boarding_location']); ?></td>
+                        <td><?php echo htmlspecialchars($row['dropoff_location']); ?></td>
+                    </tr>
+                <?php endwhile; ?>
             </tbody>
         </table>
     </div>
