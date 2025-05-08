@@ -54,7 +54,8 @@
         margin-bottom: 10px;
     }
     .institution-logos p {
-        font-size: 12px; /* Slightly smaller text */
-        color: #333;
+        font-size: 12px;
+        font-weight: bold; /* Make text bold */
+        color: #fff; /* Make text white */
     }
 </style>
