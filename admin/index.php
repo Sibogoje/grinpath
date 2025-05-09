@@ -64,13 +64,13 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
     <?php include 'header.php'; ?>
     <div class="dashboard">
         <div class="dashboard-section">
-            <h2>User Statistics</h2>
+            <h2>Reported Incidents Statistics</h2>
             <div class="chart-container">
                 <canvas id="userStatisticsChart"></canvas>
             </div>
         </div>
         <div class="dashboard-section">
-            <h2>Incident Reports</h2>
+            <h2>Incident Type Reports</h2>
             <div class="chart-container">
                 <canvas id="incidentReportsChart"></canvas>
             </div>
@@ -82,7 +82,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
             </div>
         </div>
         <div class="dashboard-section">
-            <h2>Incident Types Breakdown</h2>
+            <h2>Public Vehicle Type Reports</h2>
             <div class="chart-container">
                 <canvas id="incidentTypesBreakdownChart"></canvas>
             </div>
@@ -163,16 +163,28 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
         const incidentTypesBreakdownChart = new Chart(incidentTypesBreakdownCtx, {
             type: 'doughnut',
             data: {
-                labels: ['Bad Driving', 'Over Speeding', 'Overloading', 'Other'],
+                labels: ['Bus', 'Mini Bus', 'Kombi', 'Taxi'], // Vehicle types
                 datasets: [{
-                    label: 'Incident Types Breakdown',
-                    data: [10, 5, 3, 2],
-                    backgroundColor: ['#dc3545', '#ffc107', '#28a745', '#6c757d'],
+                    label: 'Public Vehicle Type Reports',
+                    data: [30, 20, 25, 15], // Replace with actual data for each vehicle type
+                    backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545'],
                 }]
             },
             options: {
                 responsive: true,
-                maintainAspectRatio: false
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function(tooltipItem) {
+                                return `${tooltipItem.label}: ${tooltipItem.raw} reports`;
+                            }
+                        }
+                    }
+                }
             }
         });
 
