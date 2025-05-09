@@ -76,12 +76,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
             </div>
         </div>
         <div class="dashboard-section">
-            <h2>Monthly New Users</h2>
-            <div class="chart-container">
-                <canvas id="monthlyNewUsersChart"></canvas>
-            </div>
-        </div>
-        <div class="dashboard-section">
             <h2>Public Vehicle Type Reports</h2>
             <div class="chart-container">
                 <canvas id="incidentTypesBreakdownChart"></canvas>
@@ -134,30 +128,6 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
             }
         });
 
-        const monthlyNewUsersCtx = document.getElementById('monthlyNewUsersChart').getContext('2d');
-        const monthlyNewUsersChart = new Chart(monthlyNewUsersCtx, {
-            type: 'line',
-            data: {
-                labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October'],
-                datasets: [{
-                    label: 'Monthly New Users',
-                    data: [5, 10, 8, 15, 20, 25, 30, 35, 40, 45],
-                    backgroundColor: 'rgba(0, 123, 255, 0.2)',
-                    borderColor: '#007bff',
-                    borderWidth: 1,
-                    fill: true
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
 
         const incidentTypesBreakdownCtx = document.getElementById('incidentTypesBreakdownChart').getContext('2d');
         const incidentTypesBreakdownChart = new Chart(incidentTypesBreakdownCtx, {
