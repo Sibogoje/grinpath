@@ -40,9 +40,9 @@
         }
     </style>
 </head>
-<body onclick="hideSidebar()">
+<body>
     <?php include 'header.php'; ?>
-    <div class="container form-container" onclick="event.stopPropagation()">
+    <div class="container form-container">
         <h1>Report an Incident</h1>
         <p class="text-center">Help us improve transport services by reporting incidents.</p>
         <div id="responseMessage" class="alert d-none"></div>
@@ -102,19 +102,16 @@
         </form>
     </div>
     <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            if (sidebar.style.left === "0px") {
+        document.body.addEventListener('click', function () {
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar) {
                 sidebar.style.left = "-300px";
-            } else {
-                sidebar.style.left = "0px";
             }
-        }
+        });
 
-        function hideSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            sidebar.style.left = "-300px";
-        }
+        document.getElementById('incidentForm').addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent form clicks from hiding the sidebar
+        });
 
         document.getElementById('incidentForm').addEventListener('submit', function (e) {
             e.preventDefault();
