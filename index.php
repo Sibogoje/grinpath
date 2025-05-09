@@ -102,23 +102,31 @@
         </form>
     </div>
     <script>
-        document.body.addEventListener('click', function () {
-            const sidebar = document.getElementById("sidebar");
-            if (sidebar) {
-                sidebar.classList.remove("show");
-            }
-        });
-
-        document.getElementById('incidentForm').addEventListener('click', function (e) {
-            e.stopPropagation(); // Prevent form clicks from hiding the sidebar
-        });
-
         function toggleSidebar() {
             const sidebar = document.getElementById("sidebar");
             if (sidebar) {
                 sidebar.classList.toggle("show");
             }
         }
+
+        function hideSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar) {
+                sidebar.classList.remove("show");
+            }
+        }
+
+        document.body.addEventListener('click', function () {
+            hideSidebar();
+        });
+
+        document.getElementById('incidentForm').addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent form clicks from hiding the sidebar
+        });
+
+        document.getElementById('sidebar').addEventListener('click', function (e) {
+            e.stopPropagation(); // Prevent sidebar clicks from hiding itself
+        });
 
         document.getElementById('incidentForm').addEventListener('submit', function (e) {
             e.preventDefault();
