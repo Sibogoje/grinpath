@@ -99,11 +99,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['role'] !== 'admin') {
         const userStatisticsChart = new Chart(userStatisticsCtx, {
             type: 'bar',
             data: {
-                labels: ['Total Users', 'Active Users', 'New Users This Month'],
+                labels: ['Hhohho', 'Manzini', 'Shiselweni', 'Lubombo'], // Replace with actual region names
                 datasets: [{
-                    label: 'User Statistics',
-                    data: [150, 120, 30],
-                    backgroundColor: ['#007bff', '#28a745', '#ffc107'],
+                    label: 'Incidents by Region',
+                    data: [25, 40, 15, 20], // Replace with actual incident data for each region
+                    backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545'],
                 }]
             },
             options: {
