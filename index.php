@@ -105,13 +105,20 @@
         document.body.addEventListener('click', function () {
             const sidebar = document.getElementById("sidebar");
             if (sidebar) {
-                sidebar.style.left = "-300px";
+                sidebar.classList.remove("show");
             }
         });
 
         document.getElementById('incidentForm').addEventListener('click', function (e) {
             e.stopPropagation(); // Prevent form clicks from hiding the sidebar
         });
+
+        function toggleSidebar() {
+            const sidebar = document.getElementById("sidebar");
+            if (sidebar) {
+                sidebar.classList.toggle("show");
+            }
+        }
 
         document.getElementById('incidentForm').addEventListener('submit', function (e) {
             e.preventDefault();
